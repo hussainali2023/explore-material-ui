@@ -1,5 +1,6 @@
-import { Button } from "@mui/material";
+import { Box, Button, CssBaseline } from "@mui/material";
 import { color } from "@mui/system";
+import MediaCard from "./MediaCard";
 
 function App() {
   return (
@@ -16,6 +17,17 @@ function App() {
       >
         Click me
       </Button>
+
+      <Box
+        sx={{
+          height: "30vh",
+          width: "30vh",
+          bgcolor: "primary.main",
+        }}
+      >
+        <CssBaseline></CssBaseline>
+      </Box>
+      <MediaCard></MediaCard>
     </div>
   );
 }
