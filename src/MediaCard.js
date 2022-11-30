@@ -9,7 +9,7 @@ import photo from "./61mIUCd-37L._SX679_.jpg";
 
 export default function MediaCard() {
   return (
-    <Card sx={{ maxWidth: 345, p: 6 }}>
+    <Card sx={{ maxWidth: 345, p: 1 }}>
       <CardMedia component="img" image={photo} alt="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

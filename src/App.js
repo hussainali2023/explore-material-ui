@@ -1,10 +1,33 @@
-import { Box, Button, CssBaseline } from "@mui/material";
+import {
+  Box,
+  Button,
+  createTheme,
+  CssBaseline,
+  Switch,
+  ThemeProvider,
+} from "@mui/material";
 import { color } from "@mui/system";
+import { useState } from "react";
 import MediaCard from "./MediaCard";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = createTheme({
+    palette: {
+      mode: "light",
+    },
+  });
+
+  const theme2 = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+  console.log(darkMode);
+
   return (
-    <div className="App">
+    <ThemeProvider theme={darkMode ? theme2 : theme}>
+      <Switch onClick={() => setDarkMode(!darkMode)}></Switch>
       <div>
         <Button color="secondary">Material</Button>
       </div>
@@ -20,15 +43,17 @@ function App() {
 
       <Box
         sx={{
-          height: "30vh",
-          width: "30vh",
+          height: "100vh",
+          width: "100vh",
           bgcolor: "primary.main",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <CssBaseline></CssBaseline>
+        <MediaCard></MediaCard>
       </Box>
-      <MediaCard></MediaCard>
-    </div>
+    </ThemeProvider>
   );
 }
 
